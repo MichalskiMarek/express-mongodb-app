@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "module": "esnext",
-    "target": "ES2017",
-    "moduleResolution": "Node",
+    "target": "esnext",
+    "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
     "strict": true,
     "lib": ["esnext"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
   "ts-node": {
     "esm": true,
