@@ -1,16 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "node",
-    "sourceMap": true,
+    "module": "NodeNext",
     "strict": true,
-    "lib": ["esnext"],
     "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Recommended",
   "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
+    "esm": true
   }
 }

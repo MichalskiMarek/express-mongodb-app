@@ -1,9 +1,22 @@
 import { Router } from 'express';
-import { Routes } from 'types/types';
+import { User } from '../../db-models/index.js';
+import { Routes, UserType } from '../../types/index.js';
 
-const router = Router();
+const authRouter = Router();
 
-router.post(`/${Routes.signup}`, () => {});
-router.post(`/${+Routes.login}`, () => {});
+authRouter.post<UserType, any, UserType>(Routes.signup, async (req, res) => {
+  const { email, password } = req.body;
 
-export default router;
+  try {
+    const user = await User.create({ email, password });
+    res.status(201).json(user);
+  } catch (e) {
+    console.error(e);
+    res.status(400).send(e);
+  }
+});
+// authRouter.post<UserType, any, UserType>(Routes.login, async (req, res) => {
+//   const { email, password } = req.body;
+// });
+
+export default authRouter;
